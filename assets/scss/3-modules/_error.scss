@@ -1,0 +1,28 @@
+.input-group{
+  .error {
+    position: absolute;
+    top: 14px;
+    right: 8px;
+    background-color: $wBackground;
+    i {
+      @include colorFont($rSecondary, 0.8rem);
+    }
+    span {
+      display: none;
+      position: absolute;
+      text-align: center;
+      top: -50px;
+      font-size: 0.8rem;
+      left: -95px;
+      padding: 10px;
+      width: 200px;
+      color: $wBackground;
+      background-color: $rSecondary;
+    }
+  }
+  .error:hover{
+    span{
+      display: block;
+    }
+  }
+}

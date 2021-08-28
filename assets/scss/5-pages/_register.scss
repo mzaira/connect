@@ -1,0 +1,111 @@
+//SCSS OF REGISTER.PHP
+
+//DESIGN: logo and title
+.headerContainer {
+  @include JAflex(row, center, space-between);
+  @include size(6vh, 100vw);
+  position: fixed;
+  padding: 5px 70px;
+  z-index: 1;
+  top: 5vh;
+  .logoContainer {
+    @include Aflex(row, center);
+    height: 90%;
+    width: 20%;
+    img {
+      @include size(100%, auto);
+    }
+    h1 {
+      color: $pPrimary;
+      font-size: 2rem;
+      margin-left: 5px;
+    }
+  }
+}
+
+//DESIGN: image decoration
+.imageContainer {
+  @include JAflex(row, center, center);
+  @include size(100vh, 50vw);
+  @include top-right(0, 0);
+  position: absolute;
+  z-index: 1;
+  img {
+    @include size(85vh, auto);
+  }
+}
+
+//DESIGN: forms
+.form {
+  @include JAflex(row, center, center);
+  @include size(100vh, 50vw);
+  position: absolute;
+  top: 0;
+  img {
+    @include size(80vh, auto);
+  }
+
+  //DEFAULT: design of the forms
+  .formContainer {
+    @include Jflex(column, center);
+    @include size(50%, 80%);
+    .header {
+      @include Jflex(column, center);
+      @include size(25%, 100%);
+      padding-top: 30px;
+      p {
+        @include colorFont($pPrimary, 1rem);
+      }
+      h1 {
+        padding-bottom: 20px;
+        @include colorFont($bAccent, 3rem);
+      }
+    }
+    form {
+      @include Jflex(column, center);
+      @include size(auto, 100%);
+      margin-top: 30px;
+      @include input;
+    }
+    .registerBtns {
+      @include Jflex(row, space-between);
+      @include size(auto, 100%);
+    }
+  }
+
+  //CUSTOM: design of signinContainer
+  #signinContainer {
+    form {
+      .checkbox {
+        width: 100%;
+        height: 20px;
+        input {
+          width: 20px;
+          height: 20px;
+        }
+        label{
+          position: absolute;
+          left: 20px;
+          top: 0px;
+        }
+        input:focus ~ label{
+          background-color: $wBackground;
+          color: $bAccent;
+        }
+      }
+    }
+  }
+
+  //CUSTOM: design of signinContainer
+  #signupContainer {
+    height: 73%;
+    .registerBtns {
+      justify-content: center;
+    }
+  }
+}
+
+//HIDE: signupContainer
+#signupContainer{
+  display: none;
+}

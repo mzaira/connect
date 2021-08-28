@@ -1,0 +1,27 @@
+.registerBtn {
+  @include button;
+  color: $gAccent;
+  padding: 5px;
+}
+.registerBtn:hover {
+  color: $pPrimary;
+}
+.registerBtn:focus {
+  outline: none;
+}
+
+.submit {
+  @include colorBackground(transparent, blue);
+  border: 1px blue solid;
+}
+.submit:hover {
+  @include colorBackground(blue, white);
+}
+
+.modal-submit {
+  @include colorBackground(transparent, blue);
+  border: 1px blue solid;
+}
+.modal-submit:hover {
+  @include colorBackground(blue, white);
+}

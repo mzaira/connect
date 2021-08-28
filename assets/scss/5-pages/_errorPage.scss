@@ -1,0 +1,57 @@
+.errorContainer {
+  background-image: url('../img/others/background.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  @include JAflex (column, center, center);
+
+  .headerContainer {
+    @include JAflex(row, center, space-between);
+    @include size(6vh, 100vw);
+    position: fixed;
+    padding: 5px 70px;
+    top: 3vh;
+    .logoContainer {
+      @include Aflex(row, center);
+      height: 90%;
+      width: 20%;
+      img {
+        @include size(100%, auto);
+      }
+      h1 {
+        color: $wBackground;
+        font-size: 2rem;
+        margin-left: 5px;
+      }
+    }
+  }
+  .contentContainer{
+    @include size(100vh, 90vw);
+    @include JAflex (column, center, center);
+    padding-top: 5vh;
+    h1{
+      @include colorFont($wBackground, 2.6rem);
+    }
+    p{
+      margin-top: 1vh;
+      @include colorFont($wBackground, 1.3rem);
+    }
+    img{
+      margin-top: 5vh;
+      @include size(50vh, auto);
+    }
+    a{
+      @include colorFont($pPrimary, 1.3rem);
+      font-weight: bold;
+      background-color: $wBackground;
+      margin-top: 3vh;
+      padding: 12px 30px;
+      border-radius: 30px;
+    }
+    a:hover{
+      background-color: $pPrimary;
+      color: $wBackground;
+    }
+  }
+
+}

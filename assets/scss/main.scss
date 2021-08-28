@@ -1,0 +1,24 @@
+// HELPERS
+@import "1-helpers/_mixins.scss";
+@import "1-helpers/_variables.scss";
+
+// BASICS
+@import "2-basic/_base.scss";
+@import "2-basic/_buttons.scss";
+
+// MODULES
+@import "3-modules/_error.scss";
+@import "3-modules/_modal.scss";
+@import "3-modules/_navbar.scss";
+
+// LAYOUT
+@import "4-layout/_mainLayout.scss";
+
+// PAGES
+@import "5-pages/_register.scss";
+@import "5-pages/_change.scss";
+@import "5-pages/_home.scss";
+@import "5-pages/_profile.scss";
+@import "5-pages/_settings.scss";
+@import "5-pages/_errorPage.scss";
+

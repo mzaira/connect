@@ -1,0 +1,199 @@
+//SCSS OF FORGOT PASSWORD MODAL
+
+//DESIGN: main container
+#forgot-password {
+  @include JAflex(row, center, center);
+  @include top-right(0, 0);
+  @include size100();
+  position: fixed;
+  z-index: 4;
+
+  //DESIGN: overlay of the modal
+  #overlay {
+    @include top-right(0, 0);
+    @include size100();
+    background-color: rgba($color: $bAccent, $alpha: 0.5);
+    position: fixed;
+  }
+
+  //DESIGN: main content
+  .container {
+    @include JAflex(row, center, center);
+    @include size(80vh, 80vw);
+    background-color: $wBackground;
+    border-radius: 50px;
+    position: relative;
+    overflow: hidden;
+    padding: 5px 0;
+
+    figure {
+      @include size(90%, 30vw);
+      border-radius: 0 40px 40px 0;
+      overflow: hidden;
+      img {
+        @include size100P();
+        object-fit: cover;
+      }
+    }
+    button {
+      @include top-right(10%, 5%);
+      @include button;
+      position: absolute;
+      font-size: 2em;
+      color: $gAccent;
+    }
+    button:hover {
+      color: $pPrimary;
+    }
+
+    //DESIGN: forgot password form
+    .forgot-form {
+      @include JAflex(column, center, center);
+      @include size(100%, 45vw);
+      border-radius: 0 50px 50px 0;
+      h1,
+      p {
+        color: $bAccent;
+        width: 80%;
+        margin-bottom: 10px;
+      }
+      h1 {
+        font-size: 2.5rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+      .line {
+        margin-bottom: 20px;
+        width: 80%;
+        .message {
+          background-color: $ySecondary;
+          width: 100%;
+          padding: 5px 0;
+          color: $wBackground;
+          @include JAflex(column, center, center);
+        }
+      }
+      form {
+        @include JAflex(column, center, center);
+        @include size(auto, 80%);
+        @include input();
+      }
+    }
+  }
+}
+
+#createModal {
+  @include JAflex(row, center, center);
+  @include size100();
+  position: fixed;
+  @include top-right(0, 0);
+  z-index: 4;
+
+  #overlay {
+    @include top-right(0, 0);
+    @include size100();
+    background-color: rgba($color: white, $alpha: 0.5);
+    position: fixed;
+  }
+
+  .container {
+    @include JAflex(column, center, center);
+    @include size(70vh, 45vw);
+    box-shadow: 0px 1px 15px 3px #ebebeb;
+    background-color: white;
+    border-radius: 50px;
+    position: relative;
+    overflow: hidden;
+    padding: 5px;
+
+    .headerCreate {
+      @include JAflex(row, center, space-between);
+      @include size(10%, 90%);
+      border-bottom: 1px black solid;
+      h1 {
+        @include colorFont(black, 30px);
+      }
+      button {
+        background-color: transparent;
+        font-size: 2em;
+        border: none;
+      }
+    }
+    .createForm {
+      @include size(80%, 90%);
+      margin-top: 10px;
+      .create-header {
+        @include Aflex(row, center);
+        @include size(10%, 100%);
+        figure {
+          @include JAflex(column, center, center);
+          @include size(90%, 7%);
+          border-radius: 50px;
+          overflow: hidden;
+          margin-right: 10px;
+          img {
+            display: block;
+            margin: -10% 0;
+            width: 100%;
+          }
+        }
+        .name {
+          @include Jflex(column, center);
+          @include size(100%, auto);
+          h1 {
+            font-size: 1.3rem;
+          }
+        }
+      }
+      form {
+        @include JAflex(column, center, center);
+        @include size(85%, 100%);
+        margin-top: 10px;
+        textarea {
+          @include size(75%, 100%);
+          @include button();
+          box-sizing: border-box;
+          font-size: 1.1rem;
+          padding: 5px;
+          resize: none;
+        }
+        textarea:focus {
+          outline: none;
+        }
+        .addtoPost {
+          @include JAflex(row, center, space-between);
+          @include size(25%, 100%);
+          border: 1px black solid;
+          border-radius: 10px;
+          padding: 8px;
+          .addButtons {
+            @include JAflex(row, center, space-between);
+            button {
+              @include size(80%, 40px);
+              @include button();
+              border-radius: 20px;
+              font-weight: 300;
+              margin: 5px 3px;
+              font-size: 1rem;
+              padding: 10px;
+            }
+          }
+        }
+        input {
+          @include size(40px, 100%);
+          border-radius: 20px;
+          font-weight: 300;
+          font-size: 1rem;
+          padding: 10px;
+          margin: 5px 0;
+        }
+      }
+    }
+  }
+}
+
+#createModal,
+#forgot-password {
+  display: none;
+}

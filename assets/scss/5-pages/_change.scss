@@ -1,0 +1,77 @@
+//SCSS OF CHANGE-PASSWORD.PHP
+
+//DESIGN: main container
+.changeContainer {
+  @include JAflex(row, center, center);
+  @include size(100vh, 100vw);
+  @include top-right(0, 0);
+  position: fixed;
+  z-index: 4;
+
+  //DESIGN: main content
+  .container {
+    @include JAflex(row, center, center);
+    @include size(80vh, 80vw);
+    background-color: white;
+    border-radius: 50px;
+    position: relative;
+    overflow: hidden;
+    padding: 5px;
+
+    figure {
+      @include size(90%, 30vw);
+      border-radius: 0 40px 40px 0;
+      overflow: hidden;
+      img {
+        @include size100P();
+        object-fit: cover;
+      }
+    }
+    .form2 {
+      @include JAflex(column, center, center);
+      @include size(100%, 45vw);
+      border-radius: 0 50px 50px 0;
+      position: relative;
+
+      .cheaderContainer {
+        @include JAflex(row, center, space-between);
+        @include size(4vh, 80%);
+        margin-bottom: 5px;
+        .logoContainer {
+          @include Aflex(row, center);
+          height: 90%;
+          width: 20%;
+          img {
+            @include size(100%, auto);
+          }
+          h1 {
+            color: $pPrimary;
+            font-size: 1.5rem;
+            margin-left: 5px;
+          }
+        }
+      }
+      form {
+        @include Jflex(column, center);
+        @include size(70%, 80%);
+        @include input;
+        h1 {
+          padding-bottom: 50px;
+        }
+        .btnContainer {
+          @include size(auto, 100%);
+          button {
+            @include button();
+            @include colorFont($gAccent, 1.2rem);
+            span {
+              margin-left: 8px;
+            }
+          }
+          button:hover {
+            color: $bAccent;
+          }
+        }
+      }
+    }
+  }
+}

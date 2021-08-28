@@ -1,0 +1,113 @@
+.scontainer {
+  @include size(auto, 100%);
+  @include Aflex(column, center);
+  padding-bottom: 20px;
+  padding-left: 16vw;
+
+  .settingContainer {
+    @include size(auto, 100%);
+    @include JAflex(column, center, center);
+    padding-top: 10vh;
+    .tabs {
+      @include size(10vh, 80%);
+      @include JAflex(column, center, center);
+      form {
+        @include JAflex(row, center, space-between);
+        a,
+        button {
+          @include button();
+          font-size: 1.2rem;
+          color: $gAccent;
+          padding: 1vh 1vw;
+          margin: 0 2vw;
+        }
+        a:hover,
+        button:hover,
+        .active {
+          color: $pPrimary;
+          border-bottom: 2px $pPrimary solid;
+        }
+      }
+    }
+    .settingsContainer {
+      @include size(auto, 80%);
+      min-height: 75vh;
+      @include JAflex(column, center, flex-start);
+      .editimage {
+        @include JAflex(row, center, space-between);
+        box-shadow: 0px 10px 5px -10px $gAccent;
+        padding: 1vh 1vw;
+        .profile, .cover {
+          figure {
+            @include size(8vh, 4.5vw);
+            border-radius: 50px;
+            overflow: hidden;
+            margin-right: 2vw;
+            img {
+              @include size100P();
+              object-fit: cover;
+            }
+          }
+          h1 {
+            font-size: 1.1rem;
+            color: $pPrimary;
+          }
+        }
+      }
+      form {
+        @include Jflex(column, center);
+        width: 100%;
+        padding-bottom: 5vh;
+        .input {
+          padding-bottom: 2vh;
+          @include Aflex(row, center);
+          margin: 1vh;
+          margin-top: 2vh;
+          input {
+            width: 20vw;
+            padding: 2vh 1vw;
+            margin-right: 3vw;
+            box-shadow: 0px 10px 5px -10px $gAccent;
+            border: none;
+          }
+          input:focus {
+            border-color: $pPrimary;
+          }
+          h1 {
+            font-size: 1rem;
+            width: 10vw;
+          }
+        }
+        .check {
+          padding-bottom: 2vh;
+          @include Aflex(row, center);
+          margin: 1vh;
+          margin-top: 2vh;
+          input {
+            padding: 2vh 1vw;
+            margin-right: 3vw;
+            box-shadow: 0px 10px 5px -10px $gAccent;
+            border: none;
+          }
+          h1 {
+            font-size: 1rem;
+            width: 10vw;
+          }
+        }
+        input[type="submit"] {
+          align-self: flex-end;
+          width: 20vw;
+          padding: 2vh 1vw;
+          border: none;
+          font-size: 1rem;
+          background-color: $gAccent;
+          color: $wBackground;
+          border-radius: 30px;
+        }
+        input[type="submit"]:hover {
+          background-color: $pPrimary;
+        }
+      }
+    }
+  }
+}

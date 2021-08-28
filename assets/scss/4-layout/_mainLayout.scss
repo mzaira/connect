@@ -1,0 +1,9 @@
+.mainContainer{
+    @include size(auto, 100vw);
+    position: relative;
+}
+
+.registerContainer, .errorContainer{
+    @include size100();
+    position: relative;
+}

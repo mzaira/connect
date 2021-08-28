@@ -1,0 +1,313 @@
+@mixin size($vHeight, $vWeight) {
+  height: $vHeight;
+  width: $vWeight;
+}
+
+@mixin Aflex($direction, $align) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+}
+
+@mixin Jflex($direction, $justify) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+}
+
+@mixin JAflex($direction, $align, $justify) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin flex($direction) {
+  display: flex;
+  flex-direction: $direction;
+}
+
+@mixin Cflex($align, $justify) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin colorFont($color, $fontSize) {
+  color: $color;
+  font-size: $fontSize;
+}
+
+@mixin colorBackground($background, $color) {
+  background-color: $background;
+  color: $color;
+}
+
+@mixin top-right($top, $right) {
+  top: $top;
+  right: $right;
+}
+
+@mixin top-left($top, $left) {
+  top: $top;
+  left: $left;
+}
+
+@mixin button() {
+  background-color: transparent;
+  border: none;
+}
+
+@mixin size100() {
+  height: 100vh;
+  width: 100vw;
+}
+
+@mixin size100P() {
+  height: 100%;
+  width: 100%;
+}
+
+@mixin input() {
+  input,
+  .input-group {
+    position: relative;
+    width: 100%;
+    height: 48px;
+    margin-bottom: 15px;
+
+    border-radius: 8px;
+    border: 0px;
+    font-size: inherit;
+    box-sizing: border-box;
+  }
+
+  /* Text Fields */
+
+  input:not([type="submit"]) {
+    border: 2px solid $gAccent;
+    padding: 16px;
+    background-color: transparent;
+  }
+
+  input:not([type="submit"]):focus {
+    background-color: white;
+    border: 2px solid $pPrimary;
+    outline: none;
+  }
+
+  input:not([type="submit"]):not([value=""]) {
+    border: 2px solid $pPrimary;
+  }
+
+  label {
+    font-size: 16px;
+    position: absolute;
+    display: inline-block;
+    left: 16px;
+    top: 14px;
+    pointer-events: none;
+    z-index: 1;
+    color: $bAccent;
+    opacity: 0.5;
+
+    transition: 0.4s cubic-bezier(0.65, -0.32, 0.38, 1.23) all;
+    -moz-transition: 0.4s cubic-bezier(0.65, -0.32, 0.38, 1.23) all;
+    -webkit-transition: 0.4s cubic-bezier(0.65, -0.32, 0.38, 1.23) all;
+  }
+
+  input[type="password"] {
+    letter-spacing: 2;
+  }
+
+  input:focus ~ label,
+  input:not([value=""]) ~ label {
+    top: -10px;
+    left: 8px;
+    font-size: 14px;
+    opacity: 1;
+    padding: 1px 8px;
+    border-radius: 2px;
+  }
+
+  input:not([value=""]) ~ label {
+    background-color: $wBackground;
+    color: $bAccent;
+  }
+
+  input:focus ~ label {
+    background-color: $pPrimary;
+    color: $wBackground;
+  }
+
+  /* Submit Button */
+
+  input[type="submit"] {
+    margin-top: 8px;
+    background-color: $pPrimary;
+    color: $wBackground;
+    cursor: pointer;
+  }
+
+  input[type="submit"]:focus {
+    outline: none;
+  }
+}
+
+@mixin postContainer {
+  .postsContainer {
+    @include JAflex(column, center, center);
+    @include size(auto, 100%);
+    margin: 1vh;
+    h1 {
+      @include colorFont($bAccent, 1rem);
+      margin-bottom: 10px;
+      width: 70%;
+    }
+    .none {
+      @include JAflex(column, center, center);
+      @include size(auto, 100%);
+      margin: 6vh 0;
+      h1 {
+        font-size: 1.5rem;
+        color: $rSecondary;
+        text-align: center;
+      }
+    }
+    .postWrapper{
+      @include size(auto,100%);
+      @include JAflex(column, center, center);
+      padding: 20px 20px;
+    }
+    .post {
+      @include size(auto, 70%);
+      padding: 15px 15px;
+      position: relative;
+      border: 2px solid white;
+      background-color: white;
+      border-radius: 30px;
+      margin: 10px;
+      .postHeader {
+        @include JAflex(row, center, flex-start);
+        @include size(7vh, 100%);
+        figure {
+          @include JAflex(column, center, center);
+          @include size(7vh, 5vw);
+          max-width: 3.5vw;
+          border: white solid 1px;
+          border-radius: 50px;
+          margin-right: 10px;
+          overflow: hidden;
+          img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+        .name {
+          width: 85%;
+          max-width: 100%;
+          a {
+            @include colorFont($pPrimary, 1rem);
+          }
+          span {
+            font-size: 0.9rem;
+          }
+          p {
+            @include colorFont($gAccent, 0.9rem);
+          }
+        }
+        #postOption {
+          width: 40%;
+          @include JAflex(row, center, flex-end);
+          button {
+            @include button();
+            font-size: 0.8rem;
+            padding: 5px 6px;
+            border-radius: 50px;
+            color: $gAccent;
+          }
+          button:hover {
+            background-color: $g2Accent;
+          }
+          button:focus {
+            outline: none;
+          }
+        }
+      }
+      .postBody {
+        @include size(auto, 100%);
+        @include flex(column);
+        padding-left: 55px;
+        .images {
+          @include size(auto, 100%);
+          @include JAflex(row, center, center);
+          border-radius: 10px;
+          flex-wrap: wrap;
+          overflow: hidden;
+          margin-top: 1vh;
+          figure {
+            @include JAflex(row, center, space-between);
+            @include size(35vh, 20vw);
+            flex-grow: 1;
+            border: white solid 1px;
+            overflow: hidden;
+            img {
+              display: block;
+              @include size100P();
+              object-fit: cover;
+            }
+          }
+          #moreImages {
+            position: relative;
+            cursor: pointer;
+            h1 {
+              @include JAflex(row, center, center);
+              @include size100P();
+              position: absolute;
+              background-color: rgba($color: #000000, $alpha: 0.6);
+              color: $wBackground;
+            }
+          }
+        }
+        p {
+          font-size: 0.9rem;
+          padding: 2vh 0;
+        }
+      }
+      .buttons {
+        @include size(3vh, 100%);
+        @include JAflex(row, center, space-between);
+        p{
+          font-size: 0.8rem;
+          color: $gAccent;
+          padding-left: 55px;
+        }
+        form{
+          @include JAflex(row, center, space-between);
+          .comment{
+            font-size: 0.9rem;
+            span{
+              margin-left: 5px;
+            }
+          }
+          .more{
+            color: $ySecondary;
+          }
+          iframe{
+            @include button();
+            @include size(30px, 5vw);
+          }
+        }
+      }
+    }
+    .postComment{
+      @include size(auto, 100%);
+      padding-top: 10px;
+      iframe{
+        height: 20vh;
+        width: 100%;
+      }
+    }
+  }
+}
